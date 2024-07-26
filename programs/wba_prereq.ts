@@ -1,10 +1,12 @@
+import { IdlField, IdlTypeDef } from '@coral-xyz/anchor/dist/cjs/idl';
+
 export interface WbaPrereq {
   address: string;
   metadata: Metadata;
   instructions: Instruction[];
   accounts: WbaPrereqAccount[];
   errors: Error[];
-  types: TypeElement[];
+  types: IdlTypeDef[];
 }
 
 export interface WbaPrereqAccount {
@@ -22,7 +24,7 @@ export interface Instruction {
   name: string;
   discriminator: number[];
   accounts: InstructionAccount[];
-  args: Arg[];
+  args: IdlField[];
 }
 
 export interface InstructionAccount {
